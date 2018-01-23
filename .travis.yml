@@ -1,0 +1,12 @@
+language: csharp  
+sudo: required  
+dist: trusty  
+mono: none
+dotnet: 2.0.3
+before_script:
+  - dotnet restore
+  - yarn install
+script:  
+  - dotnet build
+  - node node_modules/webpack/bin/webpack.js --config webpack.config.vendor.js
+  - node node_modules/webpack/bin/webpack.js --config webpack.config.js
