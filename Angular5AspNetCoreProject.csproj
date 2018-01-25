@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,11 +23,13 @@
 
   <ItemGroup>
     <None Remove="ClientApp\app\components\quiz\quiz-list.component.ts" />
+    <None Remove="ClientApp\app\components\quiz\quiz.component.ts" />
     <None Remove="ClientApp\interfaces\quiz.ts" />
   </ItemGroup>
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\app\components\quiz\quiz-list.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\quiz\quiz.component.ts" />
     <TypeScriptCompile Include="ClientApp\interfaces\quiz.ts" />
   </ItemGroup>
 

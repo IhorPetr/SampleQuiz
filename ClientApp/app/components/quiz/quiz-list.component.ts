@@ -12,9 +12,13 @@ export class QuizListComponent {
     private selectedQuiz: Quiz;
     private quizzes: Quiz[];
 
-    public constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
+    public constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
         this.title = "Latest Quizzes";
-        let url = baseUrl + "api/quiz/Latest/";
+        let url = baseUrl + "api/quiz/Latest/5";
+        
+        this.http.get<Quiz[]>(url).subscribe(result => {
+             this.quizzes = result;
+        }, error => console.error(error))
     }
 
     public onSelect(quiz: Quiz) {
